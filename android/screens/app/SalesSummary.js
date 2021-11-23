@@ -4,6 +4,7 @@ import logo from '../../../assets/images/logo.png'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import * as Animatable from 'react-native-animatable';
 import {LinearGradient} from 'expo-linear-gradient';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default SalesSummary = ({navigation})=>{
      return(
@@ -253,20 +254,13 @@ export default SalesSummary = ({navigation})=>{
             </View>
          </ScrollView>
 
-         <TouchableOpacity>
+         <TouchableOpacity style={[styles.button, styles.actionBtn]} onPress={()=>navigation.navigate("newSales")}>
          <LinearGradient
                     colors={['#FF7518', '#FF7518']}
                 >
-         <View style={[styles.button, styles.actionBtn]}>
-             <FontAwesome
-              name="plus"
-              size={20}
-              style={{color: "#FFF",fontSize: 24}}
-             ></FontAwesome>
-         {/* <Image
-         style={{ width: 60, height: 60,color: "#fff" }}
-        resizeMode="contain"source={{uri: "https://img.icons8.com/ios/50/000000/plus-math.png"}}></Image> */}
-        </View>
+         <Text>
+         <Ionicons name={"add"} size={40} color={"#FFF"} />
+        </Text>
         </LinearGradient>
         </TouchableOpacity>
         </View>
@@ -301,7 +295,7 @@ const styles = StyleSheet.create({
         height: 60,
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: 'grey',
+        shadowColor: '#FF7518',
         shadowOpacity: 0.1,
         shadowOffset: { x: 2, y: 0 },
         shadowRadius: 2,
@@ -310,13 +304,14 @@ const styles = StyleSheet.create({
         bottom: 20,
         right: 10,
         shadowOpacity: 5.0,
+        borderRadius: 150
 
     },
     actionBtn: {
         backgroundColor: '#FF7518',
         textShadowOffset: { width: 5, height: 5 },
         textShadowRadius: 10,
-        borderWidth: 2,
+        borderWidth: 0.2,
         borderColor: '#FF7518',
         fontSize: 18
     }
